@@ -435,11 +435,16 @@ interface RuleModule<
   create(context: RuleContext<TMessageIds, TOptions>): TRuleListener;
 }
 
+type RuleCreateFunction = (
+  context: RuleContext<never, unknown[]>,
+) => RuleListener;
+
 export {
   ReportDescriptor,
   ReportFixFunction,
   ReportSuggestionArray,
   RuleContext,
+  RuleCreateFunction,
   RuleFix,
   RuleFixer,
   RuleFunction,
